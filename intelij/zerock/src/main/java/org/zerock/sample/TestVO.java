@@ -1,23 +1,18 @@
 package org.zerock.sample;
 
-import lombok.*;
-
+import lombok.Data;
 
 // 많이 사용하는 lombok annotation
-// DATA
-// SETTER
-// GETTER
+// @Data
+// @Setter
+// @Getter
 // @RequiredArgsConstructor
-// ToString
-// EqualsAndHashCode
-// Builder
-
-@Builder
+// @AllArgsConstructor
+// @ToString
+// @EqualsAndHashCode
+// @Builder
+@Data
 public class TestVO {
     private String name;
     private String birth;
 }
-
-
-
-

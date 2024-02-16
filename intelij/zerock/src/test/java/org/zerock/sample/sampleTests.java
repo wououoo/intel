@@ -13,31 +13,29 @@ import org.zerock.config.RootConfig;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-
-@ContextConfiguration(classes = {RootConfig.class})
 @RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = {RootConfig.class})
 @Log4j
-public class sampleTests {
-   @Setter(onMethod_ = {@Autowired})
+public class SampleTests {
+    @Setter(onMethod_ = { @Autowired })
     private Restaurant restaurant1;
 
     private Restaurant restaurant2;
 
     @Test
-    public void testExists(){
+    public void testExists() {
         assertNotNull(restaurant1);
 
-        //log.debug("log:" + restaurant1);
+        //log.debug("log123:");
+        System.out.println("sout: " + restaurant1);
+        System.out.println("----------------------------");
         System.out.println(restaurant1.getChef());
-        System.out.println(restaurant1);
-        System.out.println("-------------------");
     }
 
-    @Test
-    public void testExists2(){
+    public void testExists2() {
         Restaurant res1 = new Restaurant();
         res1.getChef();
-//        Restaurant res2 = null;
-//        res2.getChef();
+        //Restaurant res2 = null;
+        //res2.getChef();
     }
 }
