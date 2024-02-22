@@ -5,4 +5,14 @@
     <select id="getTime2" resultType="string">
         SELECT sysdate FROM dual
     </select>
+    <select id="getTestCode" resultType="string">
+        SELECT 'test코드' FROM dual
+    </select>
+    <select id="getBoFreeNum" resultType="string">
+        SELECT
+            NAME
+        FROM
+            BO_FREE
+        ORDER BY NUM DESC fetch first 1 rows only
+    </select>
 </mapper>
