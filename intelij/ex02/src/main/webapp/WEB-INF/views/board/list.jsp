@@ -67,17 +67,18 @@
 									<div>
 										<form id='searchForm' action='/board/list' method='get'>
 											<select name='type'>
-												<option value="" <c:out value="${pageMaker.cri.type == null?'selected':''}"/>>--</option>
-												<option value="T" <c:out value="${pageMaker.cri.type eq 'T'?'selected':''}"/>>제목</option>
-												<option value="C" <c:out value="${pageMaker.cri.type eq 'C'?'selected':''}"/>>내용</option>
-												<option value="W" <c:out value="${pageMaker.cri.type eq 'W'?'selected':''}"/>>작성자</option>
-												<option value="TC" <c:out value="${pageMaker.cri.type eq 'TC'?'selected':''}"/>>제목 or 내용</option>
-												<option value="TW" <c:out value="${pageMaker.cri.type eq 'TW'?'selected':''}"/>>제목 or 작성자</option>
-												<option value="TWC" <c:out value="${pageMaker.cri.type eq 'TWC'?'selected':''}"/>>제목 or 내용 or 작성자</option>
-											</select> 
-											<input type='text' name='keyword' value='<c:out value="${pageMaker.cri.keyword}"/>' />
-											<%-- <input type='hidden' name='pageNum' value='<c:out value="${pageMaker.cri.pageNum}"/>' /> 
-											<input type='hidden' name='amount' value='<c:out value="${pageMaker.cri.amount}"/>' /> --%>
+												<option value="">--</option>
+												<option value="T" <c:out value="${criteria.type == 'T' ? 'selected' : ''}" />>제목</option>
+												<option value="C" <c:if test="${criteria.type == 'C'}">selected</c:if>>내용</option>
+												<option value="W">작성자</option>
+												<option value="TC">제목 or 내용</option>
+												<option value="TW">제목 or 작성자</option>
+												<option value="WC">작성자 or 내용</option>
+												<option value="TWC">제목 or 내용 or 작성자</option>
+											</select>
+											<input type='text' name='keyword' value='<c:out value="${criteria.keyword}" />' />
+											<%-- <input type='hidden' name='pageNum' />
+											<input type='hidden' name='amount' /> --%>
 											<button class='btn btn-primary'>Search</button>
 										</form>
 									</div>
