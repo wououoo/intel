@@ -9,9 +9,23 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Criteria {
+
     private String type;
     private String keyword;
 
+    private int pageNum;
+    private int pageSize;         // 페이지 사이즈
+    public Criteria(){
+        this(1, 10);
+    }
+    public Criteria(int pageNum) {
+        this.pageNum = pageNum;
+    }
+
+    public Criteria(int pageNum, int pageSize){
+        this.pageNum = pageNum;
+        this.pageSize= pageSize;
+    }
     // T, C, W, TC, TW, TWC
     // ["T"]
     // ["C"]
