@@ -1,0 +1,15 @@
+#서버설정
+server:
+  port: 10002     # 서버포트 10002 --> 주석다는법(#)
+  error:
+    whitelabel:
+      enabled: true    
+  
+#스프링설정  
+spring:
+  application:
+    name: searchfood-api  # app 이름
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
